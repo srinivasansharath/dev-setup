@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$currentDir= pwd
+CURRENTDIR=$(pwd)
 
 # update the system
 sudo apt-get update
@@ -11,8 +11,9 @@ sudo apt install -y curl build-essential cmake vim python3-dev
 
 # install GO
 cd /tmp
+sudo rm go1.14.3.linux-amd64.tar.gz
 wget https://dl.google.com/go/go1.14.3.linux-amd64.tar.gz
-sudo tar -xf go1.11.linux-amd64.tar.gz
+sudo tar -xf go1.14.3.linux-amd64.tar.gz
 sudo mv go /usr/local
 sudo chown $USER /usr/local/go 
 export GOROOT=/usr/local/go
@@ -22,9 +23,11 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # setup the new .vimrc file                                                 
 cd $CURRENTDIR 
+touch ~/.vimrc
 sudo cp ~/.vimrc ~/.vimrc_backup 
 sudo chown $USER:$GROUP ~/.vimrc_backup 
-sudo cp ./vimrc ~/.vimrc 
+touch ~/.vimrc
+sudo cp vimrc ~/.vimrc
 sudo chown $USER:$GROUP ~/.vimrc 
 
 # create the undo directory to store undo content
