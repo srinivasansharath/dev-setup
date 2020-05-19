@@ -4,7 +4,7 @@ CURRENTDIR=$(pwd)
 
 # update the system
 sudo apt-get update
-sudo apt-get -y upgrade
+#sudo apt-get -y upgrade
 
 # install build tools for YouCompleteMe
 sudo apt install -y curl build-essential cmake vim python3-dev
@@ -45,8 +45,8 @@ sudo chown $USER:$GROUP -R ~/.vim/autoload/plug.vim
 vim +'PlugInstall --sync' +qa
 
 # build the YouCompleteMe bundle
-#cd ~/.vim/plugged/YouCompleteMe/
-#python3 install.py --all
+cd ~/.vim/plugged/YouCompleteMe/
+python3 install.py --all
 
 cd $CURRENTDIR
 
