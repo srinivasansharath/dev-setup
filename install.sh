@@ -4,7 +4,7 @@ CURRENTDIR=$(pwd)
 
 # update the system
 sudo apt-get update
-#sudo apt-get -y upgrade
+sudo apt-get -y upgrade
 
 # install build tools for YouCompleteMe
 sudo apt install -y curl build-essential cmake vim python3-dev
@@ -20,6 +20,15 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
+# install mono
+sudo apt install gnupg ca-certificates
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt update
+
+# install nodejs, npm
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt install nodejs
 
 # setup the new .vimrc file                                                 
 cd $CURRENTDIR 
