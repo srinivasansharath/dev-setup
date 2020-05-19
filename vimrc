@@ -32,7 +32,6 @@ Plug 'git@github.com:kien/ctrlp.vim.git'
 Plug 'mbbill/undotree'
 call plug#end()
 
-colorscheme gruvbox
 set background=dark
 
 if executable('rg')
