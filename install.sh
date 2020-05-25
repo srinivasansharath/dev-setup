@@ -21,14 +21,14 @@ export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 # install mono
-sudo apt install gnupg ca-certificates
+sudo apt install -y gnupg ca-certificates
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 sudo apt update
 
 # install nodejs, npm
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt install nodejs
+sudo apt -y install nodejs
 
 # setup the new .vimrc file                                                 
 cd $CURRENTDIR 
@@ -60,5 +60,9 @@ python3 install.py --all
 cd $CURRENTDIR
 
 echo 'colorscheme gruvbox' >> ~/.vimrc
-sudo chmod 777 /tmp/vim-rtags-python.log
+
+if test -f "/tmp/vim-rtags-python.log"; then
+    sudo chmod 777 /tmp/vim-rtags-python.log
+fi
+
 
