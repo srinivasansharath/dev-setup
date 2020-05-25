@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get -y upgrade
 
 # install build tools for YouCompleteMe
-sudo apt install -y curl build-essential cmake vim python3-dev
+sudo apt install -y curl build-essential cmake vim python3-dev tmux terminator
 
 # install GO
 cd /tmp
