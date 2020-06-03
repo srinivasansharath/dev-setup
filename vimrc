@@ -30,6 +30,8 @@ Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
 Plug 'git@github.com:kien/ctrlp.vim.git'
 Plug 'mbbill/undotree'
+Plugi'vim-airline/vim-airline'
+Plugi'vim-airline/vim-airline-themes'
 call plug#end()
 
 set background=dark
